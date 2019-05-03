@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>知趣儿</title>
+<title>ASP.NET Core 启动期间的一些应用服务和对象 | 知趣儿</title>
 <meta name="description" content="学而时习知，温故而知趣">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -22,6 +22,7 @@
 
   </head>
   <body>
+  
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
     <h3><a href="http://blog.cykj61.com">知趣儿</a></h3>
@@ -75,81 +76,58 @@
   </div>
 </nav>
 
-
     <div id="top" class="row site">
       <div class="sm-12 md-8 col">
         <div class="paper">
+          <article class="article">
+            <h1>ASP.NET Core 启动期间的一些应用服务和对象</h1>
+            <p class="article-meta">
+              2019-05-03
+              
+            </p>
+            
+            <div class="post-content">
+              <p>**IApplicationBuilder **</p>
+<blockquote>
+<p>被用于构建应用程序的请求管道。Startup中Configure方法里使用。</p>
+</blockquote>
+<p><strong>IApplicationEnvironment</strong></p>
+<blockquote>
+<p>提供了访问应用程序属性，类似于ApplicationName，ApplicationVersion以及ApplicBasePath。Startup的构造函数和Configure中使用</p>
+</blockquote>
+<p><strong>IHostingEnvironment</strong></p>
+<blockquote>
+<p>提供当前Environment，WebRootPath以及Web根文件提供者。Startup的构造函数和Configure中使用</p>
+</blockquote>
+<p><strong>IServiceCollection</strong></p>
+<blockquote>
+<p>当前容器中各种服务的配置集合。只能在ConfigureService方法中使用。只有在ConfigureService方法中配置后，此服务在应用程序中才变得可用</p>
+</blockquote>
+<p><strong>ILoggerFactory</strong></p>
+<blockquote>
+<p>提供了创建日志的机制。可以在Startup的构造函数或Configure方法中使用。</p>
+</blockquote>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
           
-  <article class="article">
-    <h2 class="article-title">
-      <a href="http://blog.cykj61.com/post/aspnet-core-qi-dong-qi-jian-de-yi-xie-ying-yong-fu-wu-he-dui-xiang">ASP.NET Core 启动期间的一些应用服务和对象</a>
-    </h2>
-    <p class="article-meta">
-      2019-05-03
-      
-    </p>
-    <p class="text-lead">
-      
-    </p>
-    <div class="row">
-      <a href="http://blog.cykj61.com/post/aspnet-core-qi-dong-qi-jian-de-yi-xie-ying-yong-fu-wu-he-dui-xiang" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-  <article class="article">
-    <h2 class="article-title">
-      <a href="http://blog.cykj61.com/post/aspnet-core-li-yong-dockerelasticsearchkibana-lai-ji-lu-ri-zhi">ASP.NET Core 利用 Docker、ElasticSearch、Kibana 来记录日志</a>
-    </h2>
-    <p class="article-meta">
-      2019-04-30
-      
-    </p>
-    <p class="text-lead">
-      
-    </p>
-    <div class="row">
-      <a href="http://blog.cykj61.com/post/aspnet-core-li-yong-dockerelasticsearchkibana-lai-ji-lu-ri-zhi" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-  <article class="article">
-    <h2 class="article-title">
-      <a href="http://blog.cykj61.com/post/2019-nian-4-yue-30-ri-di-yi-pian-bo-ke">2019年4月30日第一篇博客</a>
-    </h2>
-    <p class="article-meta">
-      2019-04-30
-      
-    </p>
-    <p class="text-lead">
-      
-    </p>
-    <div class="row">
-      <a href="http://blog.cykj61.com/post/2019-nian-4-yue-30-ri-di-yi-pian-bo-ke" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="http://blog.cykj61.com/post/aspnet-core-li-yong-dockerelasticsearchkibana-lai-ji-lu-ri-zhi">
+                <h3 class="post-title">
+                  ASP.NET Core 利用 Docker、ElasticSearch、Kibana 来记录日志
+                </h3>
+              </a>
+            </div>
+          
         </div>
         
-        <div class="row flex-edges">
-  
-  
-</div>
-
       </div>
-      
+
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
     <img src="http://blog.cykj61.com/images/avatar.png?v=1556862633486" class="no-responsive avatar">
@@ -209,7 +187,9 @@
   </div>
 </div>
 
+
     </div>
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
 <script type="application/javascript">
