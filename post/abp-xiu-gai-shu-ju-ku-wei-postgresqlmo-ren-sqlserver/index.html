@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>标签列表 | 知趣儿</title>
+<title>ABP修改数据库为Postgresql（默认SQLServer） | 知趣儿</title>
 <meta name="description" content="学而时习知，温故而知趣">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -14,6 +14,12 @@
 <link rel="stylesheet" href="http://blog.cykj61.com/styles/main.css">
 
 
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
 
@@ -22,6 +28,7 @@
 
   </head>
   <body>
+  
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
     <h3><a href="http://blog.cykj61.com">知趣儿</a></h3>
@@ -78,12 +85,45 @@
     <div id="top" class="row site">
       <div class="sm-12 md-8 col">
         <div class="paper">
-          <h2 class="tag-list-title">标签列表</h2>
-          <div class="row tags-container">
+          <article class="article">
+            <h1>ABP修改数据库为Postgresql（默认SQLServer）</h1>
+            <p class="article-meta">
+              2019-05-06
+              
+            </p>
             
-          </div>
+            <div class="post-content">
+              <p>1 添加Npgsql.EntityFrameworkCore.PostgreSQL包</p>
+<p>2 修改BackSystemDbContextConfigurer数据库链接类型</p>
+
+            </div>
+          </article>
         </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="http://blog.cykj61.com/post/aspnet-core-qi-dong-qi-jian-de-yi-xie-ying-yong-fu-wu-he-dui-xiang">
+                <h3 class="post-title">
+                  ASP.NET Core 启动期间的一些应用服务和对象
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+          
+            <div class="paper" data-aos="fade-in">
+              <div id="gitalk-container"></div>
+            </div>
+          
+
+          
+        
       </div>
+
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
     <img src="http://blog.cykj61.com/images/avatar.png?v=1557122062867" class="no-responsive avatar">
@@ -154,7 +194,8 @@
     Powered by <a href="http://blog.cykj61.com/" target="_blank">知趣儿</a>
   </div>
 </div>
-  
+
+
     </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -166,6 +207,29 @@ AOS.init();
 hljs.initHighlightingOnLoad()
 
 </script>
+
+
+  
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: [''],
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
