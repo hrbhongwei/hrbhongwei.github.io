@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>标签列表 | 知趣儿</title>
+<title>HTTP 错误 500.24 - Internal Server Error的解决方法 | 知趣儿</title>
 <meta name="description" content="学而时习知，温故而知趣">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -14,6 +14,12 @@
 <link rel="stylesheet" href="http://blog.cykj61.com/styles/main.css">
 
 
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
 
@@ -22,6 +28,7 @@
 
   </head>
   <body>
+  
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
     <h3><a href="http://blog.cykj61.com">知趣儿</a></h3>
@@ -78,12 +85,58 @@
     <div id="top" class="row site">
       <div class="sm-12 md-8 col">
         <div class="paper">
-          <h2 class="tag-list-title">标签列表</h2>
-          <div class="row tags-container">
+          <article class="article">
+            <h1>HTTP 错误 500.24 - Internal Server Error的解决方法</h1>
+            <p class="article-meta">
+              2019-05-09
+              
+            </p>
             
-          </div>
+            <div class="post-content">
+              <p>#错误提示:#</p>
+<blockquote>
+<p>HTTP 错误 500.24</p>
+</blockquote>
+<p>最可能的原因:   system.web/identity@impersonate 设置为 true。</p>
+<p>解决办法：</p>
+<p>现在经典模式 连微软都几乎放弃了</p>
+<p>原设想是为iis不断升级 提供的一种兼容模式。即是兼容模式，一定要放弃一些原有的设定————让所有经典模式的站点使用经典程序池。这样就容易造成内存混淆。</p>
+<p>所以最好是用集成模式。</p>
+<p>对于500.24 可以通过在配置文件中确保存在</p>
+<blockquote>
+<p>&lt;system.webServer&gt;</p>
+<p>&lt; validation vavalidateIntegratedModeConfiguration=&quot;false&quot;/&gt;</p>
+<p>&lt;/system.webServer&gt;</p>
+</blockquote>
+
+            </div>
+          </article>
         </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="http://blog.cykj61.com/post/markdown-shi-yong-shuo-ming">
+                <h3 class="post-title">
+                  Markdown使用说明
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+          
+            <div class="paper" data-aos="fade-in">
+              <div id="gitalk-container"></div>
+            </div>
+          
+
+          
+        
       </div>
+
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
     <img src="http://blog.cykj61.com/images/avatar.png?v=1557385110951" class="no-responsive avatar">
@@ -160,7 +213,8 @@
     Powered by <a href="http://blog.cykj61.com/" target="_blank">知趣儿</a>
   </div>
 </div>
-  
+
+
     </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -172,6 +226,29 @@ AOS.init();
 hljs.initHighlightingOnLoad()
 
 </script>
+
+
+  
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: [''],
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
